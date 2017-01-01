@@ -1,0 +1,10 @@
+<h1>Coupons</h1>
+<ul>
+<% @coupons.each do |coupon| %>
+  <li>
+    <h3><%= link_to(coupon.coupon_code, coupon_path(coupon)) %></h3>
+    <p><%= coupon.store %></p>
+  </li>
+<% end %>
+</ul>
+<%= button_to "Create New Coupon", new_coupon_path, method: :get %>
